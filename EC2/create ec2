@@ -1,7 +1,8 @@
 Create EC2 instance
 
-aws ec2 run-instances --image-id ami-084568db4383264d4 
---count 2 --instance-type t2.micro/
+aws ec2 run-instances --image-id ami-084568db4383264d4/
+--count 2/
+--instance-type t2.micro/
 --key-name test-key/
---security-group-ids sg-09e669f1b4c16065b/ 
+--security-group-ids sg-09e669f1b4c16065b/
 --subnet-id subnet-0b83f14e2f3ba2a96

@@ -1,0 +1,23 @@
+
+  #List all instances:    
+  aws ec2 describe-instances
+
+  This command will return a JSON output with information about each instance, 
+  including its state (e.g., "running", "pending", "stopping", "terminated")
+  *****************************************************************************
+
+  # Filter for running instances:    
+  aws ec2 describe-instances 
+      --filters "Name=instance-state-name,Values=running" --query "Reservations[].Instances[].InstanceId"
+
+ This command will only return the InstanceId values of instances that are in the "running" state. 
+
+ *****************************************************************************
+
+ # Check the status of running instances:
+ aws ec2 describe-instance-status --instance-ids <instance_id>
+
+ The aws ec2 describe-instance-status command can be used to get the status of your EC2 instances, 
+ including the system status (e.g., "ok", "impaired") and the instance status (e.g., "running", "stopped").
+      
+    

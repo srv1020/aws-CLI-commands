@@ -1,6 +1,8 @@
-delete Ec2 instance
-
+# delete Ec2 instance
 aws ec2 terminate-instances --instance-ids i-09819b178a61a1ba0
+
+# stop ec2 instance
+aws ec2 stop-instances --instance-ids i-00c32526a1625448c
 
 
 0 : pending

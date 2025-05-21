@@ -7,7 +7,7 @@
   *****************************************************************************
 
   # Filter for running instances:    
-  aws ec2 describe-instances 
+  aws ec2 describe-instances \
       --filters "Name=instance-state-name,Values=running" --query "Reservations[].Instances[].InstanceId"
 
  This command will only return the InstanceId values of instances that are in the "running" state. 

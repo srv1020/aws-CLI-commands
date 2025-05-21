@@ -1,0 +1,3 @@
+delete Ec2 instance
+
+aws ec2 terminate-instances --instance-ids i-09819b178a61a1ba0

@@ -3,6 +3,9 @@
   aws ec2 describe-instances
   if any specific profile        ( + --profile <profile_name>
 
+  to make any profile default
+  AWS_DEFAULT_PROFILE=<profile_name>
+
   This command will return a JSON output with information about each instance, 
   including its state (e.g., "running", "pending", "stopping", "terminated")
   *****************************************************************************

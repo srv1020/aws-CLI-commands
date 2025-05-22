@@ -1,0 +1,13 @@
+# create profiles
+aws configure --profile test01
+
+enter key and pass / select region / done
+by using same key and pass + different region / done
+
+
+# list all profiles
+aws configure list-profiles
+default
+iam01
+iam02
+iam03

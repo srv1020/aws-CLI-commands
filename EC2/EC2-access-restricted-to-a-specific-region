@@ -2,9 +2,9 @@ To create an AWS user with full EC2 access restricted to a specific region using
 you first need to create the user and then create a policy that limits their access. 
 Finally, you attach this policy to the user. 
 1. Create the IAM User:
-Code
 
 aws iam create-user --user-name bob
+
 2. Create the IAM Policy:
 This policy limits access to EC2 to the specified region. Replace us-east-1 with your desired region. 
 Code
@@ -27,13 +27,16 @@ Code
     ]
 }
 Save this JSON to a file (e.g., ec2-region-policy.json). 
+
 3. Create the Policy using the CLI: 
-Code
 
-aws iam create-policy --policy-name ec2-region-policy --policy-document file://ec2-region-policy.json
+aws iam create-policy --policy-name ec2-region-policy \
+--policy-document file://ec2-region-policy.json
+
 4. Attach the Policy to the User:
-Code
 
-aws iam attach-user-policy --user-name bob --policy-arn arn:aws:iam::YOUR-ACCOUNT-ID:policy/ec2-region-policy
+aws iam attach-user-policy \
+--policy-arn arn:aws:iam::YOUR-ACCOUNT-ID:policy/ec2-region-policy \
+--user-name bob
 
 Replace YOUR-ACCOUNT-ID with your actual AWS account ID

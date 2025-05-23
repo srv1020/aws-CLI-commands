@@ -1,8 +1,29 @@
-Create EC2 instance
+Create EC2 instance                     
+
 
 aws ec2 run-instances --image-id ami-084568db4383264d4 \
---count 2 \
+--count 1 \
 --instance-type t2.micro \
---key-name test-key \
+--key-name srv-key \        
 --security-group-ids sg-09e669f1b4c16065b \
 --subnet-id subnet-0b83f14e2f3ba2a96
+
+--key-name <ec2-key-pair-name>: (Optional) 
+Specifies the name of the key pair to use for SSH access. 
+
+****************************************************************
+                            to create key pair standalone
+
+aws ec2 create-key-pair 
+--key-name aws-cli 
+--query 'KeyMaterial' 
+--output text > aws-cli.pem
+chmod 400 MyKeyPair.pem
+
+                                Display your key pair
+aws ec2 describe-key-pairs 
+--key-name MyKeyPair
+
+                                Delete-Key-Pair
+
+aws ec2 delete-key-pair --key-name MyKeyPair

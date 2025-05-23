@@ -1,0 +1,17 @@
+                            to create key pair standalone
+
+aws ec2 create-key-pair 
+--key-name aws-cli 
+--query 'KeyMaterial' 
+--output text > aws-cli.pem
+
+                            to give read write permissions                           
+chmod 400 MyKeyPair.pem
+
+                             Display your key pair
+aws ec2 describe-key-pairs 
+--key-name MyKeyPair
+
+                             Delete-Key-Pair
+
+aws ec2 delete-key-pair --key-name MyKeyPair
